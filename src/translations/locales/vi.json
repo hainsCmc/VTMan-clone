@@ -1,0 +1,20 @@
+{
+  "common": {
+    "ok": "Đồng ý",
+    "cancel": "Huỷ bỏ",
+    "emptyData": "Không có dữ liệu",
+    "notification": "Thông báo",
+    "logout": "Đăng xuất",
+    "continue": "Tiếp tục",
+    "back": "Quay lại",
+    "confirm": "Xác nhận",
+    "end": "Kết thúc",
+    "select": "Chọn",
+    "selectDate": "Chọn ngày"
+  },
+  "errors": {
+    "required": "Đây là trường bắt buộc.",
+    "OTHER_ERROR": "Có lỗi xảy ra. Vui lòng thử lại."
+  },
+  "success": {}
+}
