@@ -7,7 +7,7 @@ import {fonts as Fonts} from '~/themes';
 const initialState = {
   language: 'vi',
   theme: ThemeEnum.light,
-  font: Object.keys(Fonts)[1],
+  font: Object.keys(Fonts)[0],
 };
 
 const reducers = {

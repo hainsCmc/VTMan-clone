@@ -8,6 +8,7 @@ export interface VStackProps extends ViewStyle {
   _props: ViewProps;
   safeAreaTop: boolean;
   safeAreaBottom: boolean;
+  style: Object;
 }
 
 export const VStack = (props: Partial<VStackProps>) => {

@@ -51,7 +51,7 @@ export const HomeScreen = () => {
   const renderItem = useCallback(({item}) => {
     return (
       <Pressable onPress={item?.onPress}>
-        <VStack height={scale(50)} padding={scale(16)}>
+        <VStack padding={scale(16)}>
           <Text fontSize={scale(16)}>{item?.name || ''}</Text>
         </VStack>
       </Pressable>

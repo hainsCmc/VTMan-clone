@@ -8,6 +8,7 @@ export interface HStackProps extends ViewStyle {
   _props: ViewProps;
   safeAreaTop: boolean;
   safeAreaBottom: boolean;
+  style: Object;
 }
 
 export const HStack = (props: Partial<HStackProps>) => {
