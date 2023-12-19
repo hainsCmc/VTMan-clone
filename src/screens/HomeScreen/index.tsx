@@ -1,10 +1,16 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import {MainLayout} from '~/components';
+import HomeHeader from './HomeHeader';
 
 export const HomeScreen = () => {
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    <MainLayout safeAreaTop={false}>
+      <HomeHeader />
+      {/* notifacation */}
+      {/* transport */}
+      {/* operating */}
+      {/* banner */}
+      {/* inCome */}
+    </MainLayout>
   );
 };

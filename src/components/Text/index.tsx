@@ -35,25 +35,25 @@ export const Text = (props: Partial<TextProps>) => {
   const {colors, fonts} = useTheme();
 
   const FontFamily = useMemo(() => {
-    if (!!light) {
+    if (light) {
       return fonts.light;
     }
-    if (!!lightItalic) {
+    if (lightItalic) {
       return fonts.lightItalic;
     }
-    if (!!italic) {
+    if (italic) {
       return fonts.italic;
     }
-    if (!!medium) {
+    if (medium) {
       return fonts.medium;
     }
-    if (!!mediumItalic) {
+    if (mediumItalic) {
       return fonts.mediumItalic;
     }
-    if (!!bold) {
+    if (bold) {
       return fonts.bold;
     }
-    if (!!boldItalic) {
+    if (boldItalic) {
       return fonts.boldItalic;
     }
     return fonts.normal;

@@ -2,14 +2,22 @@ import React, {useCallback, useMemo, useState} from 'react';
 import {FlatList} from 'react-native';
 import {scale} from 'react-native-size-matters';
 import IonIcons from 'react-native-vector-icons/Ionicons';
-import {ActionSheet, MainLayout, ModalConfirm, Pressable, Text, VStack} from '~/components';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {ActionSheet, HStack, MainLayout, ModalConfirm, Pressable, Text, VStack} from '~/components';
 import {ANIMATED_FLATLIST_SCREEN, LOGIN_SCREEN, ROOT_HOME_SCREEN} from '~/constants/ScreenName';
+import {useAppSelector, useTheme} from '~/hooks';
+import {ThemeEnum} from '~/models';
 import {navigate} from '~/services/navigationServices';
+import {useSession} from '~/slices/sessionSlice';
 import {showAlert} from '~/utils/alert';
 
 export const DemoScreen = () => {
   const [showModal, setShowModal] = useState(false);
   const [showActionSheet, setShowActionSheet] = useState(false);
+
+  const {theme} = useAppSelector((state) => state.session);
+  const {colors} = useTheme();
+  const {changeTheme} = useSession();
 
   const DATA = useMemo(() => {
     return [
@@ -51,11 +59,24 @@ export const DemoScreen = () => {
     );
   }, []);
 
+  const changeModeTheme = () => {
+    if (theme) {
+      changeTheme(ThemeEnum.dark);
+    } else {
+      changeTheme(ThemeEnum.light);
+    }
+  };
+
   return (
-    <MainLayout>
-      <Pressable onPress={() => navigate(ROOT_HOME_SCREEN)}>
-        <IonIcons name="home" size={30} />
-      </Pressable>
+    <MainLayout safeAreaTop={true}>
+      <HStack gap={10}>
+        <Pressable onPress={() => navigate(ROOT_HOME_SCREEN)}>
+          <IonIcons name="home" size={30} color={colors.text[10]} />
+        </Pressable>
+        <Pressable onPress={changeModeTheme}>
+          <MaterialCommunityIcons name="theme-light-dark" size={30} color={colors.text[10]} />
+        </Pressable>
+      </HStack>
       <FlatList data={DATA} keyExtractor={(_, index) => String(index)} renderItem={renderItem} />
       <ModalConfirm
         isVisible={showModal}

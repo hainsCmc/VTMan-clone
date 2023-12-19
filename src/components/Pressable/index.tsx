@@ -19,7 +19,7 @@ export const Pressable = (props: Partial<PressableProps>) => {
     <TouchableOpacity
       activeOpacity={0.5}
       onPress={debounced}
-      style={[{opacity: !!_props?.disabled ? 0.6 : 1}, {...rest}]}
+      style={[{opacity: _props?.disabled ? 0.6 : 1}, {...rest}]}
       {..._props}>
       {children}
     </TouchableOpacity>

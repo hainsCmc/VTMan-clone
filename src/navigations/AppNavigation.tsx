@@ -40,6 +40,8 @@ const AppNavigation = () => {
           headerShown: false,
           gestureEnabled: false,
           animation: 'fade_from_bottom',
+          statusBarColor: 'transparent',
+          statusBarTranslucent: true,
         }}
       >
         <Stack.Screen name={ROOT_HOME_SCREEN} component={RootHomeScreen} />

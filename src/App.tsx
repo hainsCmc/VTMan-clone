@@ -7,6 +7,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import AppNavigation from '~/navigations/AppNavigation';
 import {persistor, store} from '~/stores';
 import '~/translations';
+import {NativeBaseProvider} from 'native-base';
 
 export default function App() {
   return (
@@ -14,7 +15,9 @@ export default function App() {
       <PersistGate loading={null} persistor={persistor}>
         <SafeAreaProvider>
           <BottomSheetModalProvider>
-            <AppNavigation />
+            <NativeBaseProvider>
+              <AppNavigation />
+            </NativeBaseProvider>
           </BottomSheetModalProvider>
         </SafeAreaProvider>
       </PersistGate>

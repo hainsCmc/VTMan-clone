@@ -13,7 +13,10 @@ export const MainLayout = (props: Partial<VStackProps>) => {
   );
 };
 
+// safeAreaTop = false -> khi bọc header vì xử lý safeAreaTop trong header để full screen
 MainLayout.defaultProps = {
-  safeAreaTop: true,
+  safeAreaTop: false,
   safeAreaBottom: true,
+  safeAreaLeft: true,
+  safeAreaRight: true,
 };

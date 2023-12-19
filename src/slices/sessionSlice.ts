@@ -32,7 +32,7 @@ export const useSession = () => {
   const changeLanguage = (data: string) => {
     dispatch(changeLanguageAction(data));
   };
-  const changeTheme = (data: string) => {
+  const changeTheme = (data: any) => {
     dispatch(changeThemeAction(data));
   };
 

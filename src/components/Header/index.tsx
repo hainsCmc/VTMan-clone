@@ -3,15 +3,7 @@ import React from 'react';
 import {scale} from 'react-native-size-matters';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 import {useTheme} from '~/hooks';
-import {
-  HStack,
-  HStackProps,
-  Pressable,
-  Text,
-  TextProps,
-  VStack,
-  VStackProps,
-} from '..';
+import {HStack, HStackProps, Pressable, Text, TextProps, VStack, VStackProps} from '..';
 
 interface Props extends HStackProps {
   title: string;
@@ -49,17 +41,14 @@ export const Header = (props: Partial<Props>) => {
         paddingHorizontal={scale(16)}
         paddingVertical={scale(4)}
         onPress={() => {
-          if (!!onPressBackIcon) {
+          if (onPressBackIcon) {
             onPressBackIcon?.();
           } else {
             navigation.goBack();
           }
-        }}>
-        <IonIcons
-          name="arrow-back"
-          size={scale(25)}
-          color={colors.primary[10]}
-        />
+        }}
+      >
+        <IonIcons name="arrow-back" size={scale(25)} color={colors.primary[10]} />
       </Pressable>
     );
   };
@@ -72,7 +61,7 @@ export const Header = (props: Partial<Props>) => {
   };
 
   return (
-    <HStack alignItems="center" paddingVertical={scale(8)} {...rest}>
+    <HStack alignItems="center" paddingVertical={scale(2)} paddingHorizontal={scale(3)} {...rest}>
       {getLeftIcon()}
       <VStack flex={1} alignItems="center" {..._titleContainer}>
         {!!title && (
@@ -81,7 +70,8 @@ export const Header = (props: Partial<Props>) => {
             bold
             color={colors.text[10]}
             _props={{numberOfLines: 1}}
-            {..._title}>
+            {..._title}
+          >
             {title}
           </Text>
         )}
@@ -89,4 +79,8 @@ export const Header = (props: Partial<Props>) => {
       {getRightIcon()}
     </HStack>
   );
+};
+
+Header.defaultProps = {
+  safeAreaTop: true,
 };
