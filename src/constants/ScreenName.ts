@@ -1,6 +1,13 @@
-export const HOME_SCREEN = 'HOME_SCREEN';
-export const LOGIN_SCREEN = 'LOGIN_SCREEN';
-export const ANIMATED_FLATLIST_SCREEN = 'ANIMATED_FLATLIST_SCREEN';
-export const DEMO_SCREEN = 'DEMO_SCREEN';
+// Root Router
 export const ROOT_HOME_SCREEN = 'ROOT_HOME_SCREEN';
+export const LOGIN_SCREEN = 'LOGIN_SCREEN';
+export const DEMO_SCREEN = 'DEMO_SCREEN';
+export const ANIMATED_FLATLIST_SCREEN = 'ANIMATED_FLATLIST_SCREEN';
+
+// name screen
+export const HOME_SCREEN = 'HOME_SCREEN';
 export const SETTING_SCREEN = 'SETTING_SCREEN';
+export const USER_SCREEN = 'USER_SCREEN';
+
+// ROUTER
+export const HOME_SCREEN_ROUTER = 'HOME_SCREEN_ROUTER';

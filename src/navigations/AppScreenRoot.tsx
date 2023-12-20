@@ -4,7 +4,7 @@ import React from 'react';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import {HStack, Pressable, Text, VStack} from '~/components';
 import {NAME_TAB_BAR} from '~/constants/NameTabBar';
-import {HOME_SCREEN, SETTING_SCREEN} from '~/constants/ScreenName';
+import {HOME_SCREEN_ROUTER, SETTING_SCREEN} from '~/constants/ScreenName';
 import {useTheme} from '~/hooks';
 import {HomeScreen, SettingScreen} from '~/screens';
 
@@ -15,7 +15,7 @@ const TabBarRootHome = ({state, descriptors, navigation}) => {
 
   const renderIconTabBar = (label: string, isFocused: boolean) => {
     switch (label) {
-      case HOME_SCREEN:
+      case HOME_SCREEN_ROUTER:
         return <Fontisto name="home" size={14} color={isFocused ? colors.base : colors.text[10]} />;
 
       case SETTING_SCREEN:
@@ -69,19 +69,21 @@ const TabBarRootHome = ({state, descriptors, navigation}) => {
   );
 };
 
-export const RootHomeScreen = () => {
+const AppScreenRoot = () => {
   return (
     <>
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={HOME_SCREEN}
+        initialRouteName={HOME_SCREEN_ROUTER}
         tabBar={(props) => <TabBarRootHome {...props} />}
       >
-        <Tab.Screen name={HOME_SCREEN} component={HomeScreen} />
+        <Tab.Screen name={HOME_SCREEN_ROUTER} component={HomeScreen} />
         <Tab.Screen name={SETTING_SCREEN} component={SettingScreen} />
       </Tab.Navigator>
     </>
   );
 };
+
+export default AppScreenRoot;

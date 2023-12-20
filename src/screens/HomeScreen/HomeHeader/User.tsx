@@ -3,14 +3,20 @@ import React from 'react';
 import {scale} from 'react-native-size-matters';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {HStack, Pressable, Text, VStack} from '~/components';
+import {USER_SCREEN} from '~/constants/ScreenName';
 import {useTheme} from '~/hooks';
+import {navigate} from '~/services/navigationServices';
 
 const Logo = require('~/assets/icon/ic_home.png');
 
 const User = () => {
   const {colors} = useTheme();
+
+  const handlePress = () => {
+    navigate(USER_SCREEN);
+  };
   return (
-    <Pressable>
+    <Pressable onPress={handlePress}>
       <HStack alignItems="center" justifyContent="space-between">
         <HStack alignItems="stretch">
           <Avatar

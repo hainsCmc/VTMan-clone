@@ -7,7 +7,7 @@ import {ActionSheet, HStack, MainLayout, ModalConfirm, Pressable, Text, VStack} 
 import {ANIMATED_FLATLIST_SCREEN, LOGIN_SCREEN, ROOT_HOME_SCREEN} from '~/constants/ScreenName';
 import {useAppSelector, useTheme} from '~/hooks';
 import {ThemeEnum} from '~/models';
-import {navigate} from '~/services/navigationServices';
+import {navigate, setRoot} from '~/services/navigationServices';
 import {useSession} from '~/slices/sessionSlice';
 import {showAlert} from '~/utils/alert';
 
@@ -70,7 +70,7 @@ export const DemoScreen = () => {
   return (
     <MainLayout safeAreaTop={true}>
       <HStack gap={10}>
-        <Pressable onPress={() => navigate(ROOT_HOME_SCREEN)}>
+        <Pressable onPress={() => setRoot(ROOT_HOME_SCREEN)}>
           <IonIcons name="home" size={30} color={colors.text[10]} />
         </Pressable>
         <Pressable onPress={changeModeTheme}>

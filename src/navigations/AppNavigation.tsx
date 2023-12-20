@@ -11,7 +11,8 @@ import {
   ROOT_HOME_SCREEN,
 } from '~/constants/ScreenName';
 import {useAppSelector} from '~/hooks/useAppSelector';
-import {AnimatedFlatlistScreen, DemoScreen, LoginScreen, RootHomeScreen} from '~/screens';
+import {AnimatedFlatlistScreen, DemoScreen, LoginScreen} from '~/screens';
+import AppScreenRoot from './AppScreenRoot';
 import {navigationRef} from '~/services/navigationServices';
 import i18n from '~/translations';
 
@@ -44,7 +45,7 @@ const AppNavigation = () => {
           statusBarTranslucent: true,
         }}
       >
-        <Stack.Screen name={ROOT_HOME_SCREEN} component={RootHomeScreen} />
+        <Stack.Screen name={ROOT_HOME_SCREEN} component={AppScreenRoot} />
         <Stack.Screen name={LOGIN_SCREEN} component={LoginScreen} />
         <Stack.Screen name={DEMO_SCREEN} component={DemoScreen} />
         <Stack.Screen name={ANIMATED_FLATLIST_SCREEN} component={AnimatedFlatlistScreen} />
