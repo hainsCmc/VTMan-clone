@@ -7,7 +7,7 @@ export const MainLayout = (props: Partial<VStackProps>) => {
   const {colors} = useTheme();
 
   return (
-    <VStack flex={1} backgroundColor={colors.white} {...rest}>
+    <VStack flex={1} backgroundColor={colors.background[10]} {...rest}>
       {children}
     </VStack>
   );

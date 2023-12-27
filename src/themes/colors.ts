@@ -15,6 +15,7 @@ export default {
     },
     background: {
       10: '#FBE8E2',
+      20: '#000000',
     },
     gray: {
       10: '#D6DEE5',
@@ -23,6 +24,9 @@ export default {
     red: {
       10: '#ef4444',
     },
+    link: {
+      10: '#00009f',
+    }
   },
   [ThemeEnum.light]: {
     white: '#ffffff',
@@ -36,6 +40,7 @@ export default {
     },
     background: {
       10: '#FBE8E2',
+      20: '#FFFFFF',
     },
     gray: {
       10: '#D6DEE5',
@@ -44,5 +49,8 @@ export default {
     red: {
       10: '#ef4444',
     },
+    link: {
+      10: '#00009f',
+    }
   },
 };

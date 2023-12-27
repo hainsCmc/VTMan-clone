@@ -11,3 +11,6 @@ export const USER_SCREEN = 'USER_SCREEN';
 
 // ROUTER
 export const HOME_SCREEN_ROUTER = 'HOME_SCREEN_ROUTER';
+
+// Các màn hình bên trong HOME_SCREEN_ROUTER ẩn tabbar
+export const LIST_SCREEN_HIDDEN_TAB_BAR = ['USER_SCREEN'];
