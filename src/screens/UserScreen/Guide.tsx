@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, VStack} from '~/components';
 import {useTheme} from '~/hooks';
+import {checkCameraPermission} from '~/utils/devicesPermission';
 
 const Guide = () => {
   const {colors} = useTheme();
@@ -12,7 +13,7 @@ const Guide = () => {
       <Text medium>1. CMND hoặc CCCD còn hiệu lực theo quy định</Text>
       <Text medium>
         2. Điện thoại có Camera.{' '}
-        <Text color={colors.link[10]}>
+        <Text color={colors.link[10]} _props={{onPress: checkCameraPermission}}>
           Nhấn để kiểm tra
         </Text>
       </Text>

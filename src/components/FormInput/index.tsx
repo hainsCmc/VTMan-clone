@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {useState} from 'react';
 import {Controller} from 'react-hook-form';
 import {StyleSheet, TextInput, TextInputProps, TextStyle} from 'react-native';
@@ -47,8 +48,9 @@ export const FormInput = (props: Partial<FormInputProps>) => {
               borderRadius={scale(8)}
               backgroundColor={colors.gray[30]}
               borderColor={colors.red[10]}
-              borderWidth={!!errorMessage ? 1 : 0}
-              {..._container}>
+              borderWidth={errorMessage ? 1 : 0}
+              {..._container}
+            >
               {renderLeftElement && renderLeftElement?.()}
               <TextInput
                 style={[
@@ -73,7 +75,8 @@ export const FormInput = (props: Partial<FormInputProps>) => {
                   onPress={() => setShowText(!showText)}
                   paddingRight={scale(16)}
                   justifyContent="center"
-                  alignItems="center">
+                  alignItems="center"
+                >
                   <IonIcons
                     name={!showText ? 'eye' : 'eye-off'}
                     size={20}
@@ -100,7 +103,8 @@ export const FormInput = (props: Partial<FormInputProps>) => {
       height={scale(45)}
       borderRadius={scale(8)}
       backgroundColor={colors.gray[30]}
-      {..._container}>
+      {..._container}
+    >
       {renderLeftElement && renderLeftElement?.()}
       <TextInput
         style={[
@@ -122,7 +126,8 @@ export const FormInput = (props: Partial<FormInputProps>) => {
           onPress={() => setShowText(!showText)}
           paddingRight={scale(16)}
           justifyContent="center"
-          alignItems="center">
+          alignItems="center"
+        >
           <IonIcons
             name={!showText ? 'eye' : 'eye-off'}
             size={20}

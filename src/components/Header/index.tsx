@@ -3,7 +3,15 @@ import React from 'react';
 import {scale} from 'react-native-size-matters';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 import {useTheme} from '~/hooks';
-import {HStack, HStackProps, Pressable, Text, TextProps, VStack, VStackProps} from '..';
+import {
+  HStack,
+  HStackProps,
+  Pressable,
+  Text,
+  TextProps,
+  VStack,
+  VStackProps,
+} from '..';
 
 interface Props extends HStackProps {
   title: string;
@@ -48,7 +56,7 @@ export const Header = (props: Partial<Props>) => {
           }
         }}
       >
-        <IonIcons name="arrow-back" size={scale(25)} color={colors.primary[10]} />
+        <IonIcons name="chevron-back" size={scale(20)} color={colors.white} />
       </Pressable>
     );
   };
@@ -61,14 +69,20 @@ export const Header = (props: Partial<Props>) => {
   };
 
   return (
-    <HStack alignItems="center" paddingVertical={scale(2)} paddingHorizontal={scale(3)} {...rest}>
+    <HStack
+      alignItems="center"
+      paddingVertical={scale(2)}
+      paddingHorizontal={scale(3)}
+      backgroundColor={colors.base}
+      {...rest}
+    >
       {getLeftIcon()}
       <VStack flex={1} alignItems="center" {..._titleContainer}>
         {!!title && (
           <Text
-            fontSize={scale(20)}
-            bold
-            color={colors.text[10]}
+            fontSize={scale(18)}
+            medium
+            color={colors.white}
             _props={{numberOfLines: 1}}
             {..._title}
           >

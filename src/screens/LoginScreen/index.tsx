@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {yupResolver} from '@hookform/resolvers/yup';
 import React from 'react';
 import {useForm} from 'react-hook-form';
@@ -42,7 +43,8 @@ export const LoginScreen = () => {
             <VStack
               justifyContent="center"
               alignItems="center"
-              paddingLeft={scale(16)}>
+              paddingLeft={scale(16)}
+            >
               <IonIcons name="person" size={20} color="gray" />
             </VStack>
           )}
